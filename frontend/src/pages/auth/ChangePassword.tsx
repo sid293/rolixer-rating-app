@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+// import { useNavigate } from 'react-router-dom';
+// import { useAuth } from '../../contexts/AuthContext';
 
 const changePasswordSchema = z
   .object({
@@ -25,7 +25,7 @@ const changePasswordSchema = z
 type ChangePasswordFormData = z.infer<typeof changePasswordSchema>;
 
 export default function ChangePassword() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const { user } = useAuth();
 
   const {
@@ -43,11 +43,11 @@ export default function ChangePassword() {
       console.log('Password change data:', data);
       reset();
       // Redirect to appropriate dashboard based on user role
-      const dashboardRoutes = {
-        ADMIN: '/admin/dashboard',
-        USER: '/dashboard',
-        STORE_OWNER: '/store/dashboard',
-      };
+      // const dashboardRoutes = {
+      //   ADMIN: '/admin/dashboard',
+      //   USER: '/dashboard',
+      //   STORE_OWNER: '/store/dashboard',
+      // };
       // navigate(dashboardRoutes[user?.role || 'USER']);
     } catch (error) {
       console.error('Password change failed:', error);

@@ -1,5 +1,6 @@
 import { useEffect, useState, Fragment } from 'react';
-import { DashboardStats, User, Store, Rating } from '../../types';
+// import { DashboardStats, User, Store, Rating } from '../../types';
+import { DashboardStats } from '../../types';
 import DashboardLayout from '../../components/layout/DashboardLayout';
 import { UserGroupIcon, BuildingStorefrontIcon, StarIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, Transition } from '@headlessui/react';
@@ -53,13 +54,13 @@ export default function AdminDashboard() {
   const [modalData, setModalData] = useState<Array<any>>([]);
   const [loading, setLoading] = useState(false);
   const [showAddUserForm, setShowAddUserForm] = useState(false);
-  const [newUser, setNewUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-    address: '',
-    role: 'USER'
-  });
+  // const [newUser, setNewUser] = useState({
+  //   name: '',
+  //   email: '',
+  //   password: '',
+  //   address: '',
+  //   role: 'USER'
+  // });
 
   const registerSchema = z.object({
     name: z
