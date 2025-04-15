@@ -127,3 +127,4 @@ CREATE TABLE ratings (
 - Integration tests for API endpoints
 - E2E tests for critical user flows
 - Test coverage reporting# rolixer-rating-app
+# rolixer-rating-app
