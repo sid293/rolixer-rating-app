@@ -4,11 +4,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../../contexts/AuthContext';
 
-interface NavigationItem {
-  name: string;
-  href: string;
-  current: boolean;
-}
+// interface NavigationItem {
+//   name: string;
+//   href: string;
+//   current: boolean;
+// }
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -16,31 +16,32 @@ function classNames(...classes: string[]) {
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  // const { user, logout } = useAuth();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     logout();
     navigate('/login');
   };
 
-  const getNavigationItems = (): NavigationItem[] => {
-    switch (user?.role) {
-      case 'ADMIN':
-        return [
-          { name: 'Dashboard', href: '/admin/dashboard', current: true },
-          { name: 'Users', href: '/admin/users', current: false },
-        ];
-      case 'USER':
-        return [
-          { name: 'Dashboard', href: '/dashboard', current: true },
-          { name: 'Stores', href: '/stores', current: false },
-        ];
-      case 'STORE_OWNER':
-        return [{ name: 'Dashboard', href: '/store/dashboard', current: true }];
-      default:
-        return [];
-    }
-  };
+  // const getNavigationItems = (): NavigationItem[] => {
+  //   switch (user?.role) {
+  //     case 'ADMIN':
+  //       return [
+  //         { name: 'Dashboard', href: '/admin/dashboard', current: true },
+  //         { name: 'Users', href: '/admin/users', current: false },
+  //       ];
+  //     case 'USER':
+  //       return [
+  //         { name: 'Dashboard', href: '/dashboard', current: true },
+  //         { name: 'Stores', href: '/stores', current: false },
+  //       ];
+  //     case 'STORE_OWNER':
+  //       return [{ name: 'Dashboard', href: '/store/dashboard', current: true }];
+  //     default:
+  //       return [];
+  //   }
+  // };
 
   // const navigation = getNavigationItems();
 
